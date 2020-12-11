@@ -1,0 +1,25 @@
+Este arquivo descreve a linguagem de cada arquivo de automato:
+
+-> Entrada1.txt:
+    Arquivo de exemplo passado na descrição
+
+-> Entrada2.txt:
+    Arquivo de exemplo modificado com novos nomes de estados e simbolos {!,@}
+
+-> Entrada3.txt:
+   {w e {0,1}* | w tem tamanho 3}
+   Utiliza estado de erro
+
+-> A1.txt:
+    {w e {0,1}* | w nao contm as subpalavras 000 e 111}
+    Utiliza estado de erro
+
+-> A2.txt:
+    {w e {0,1}* | o sufixo de w sempre é 00}
+
+-> A3.txt:
+    {w e {0,1}* | w tem sempre uma quantidade impar de 0's}
+
+-> A4.txt:
+    {w e {0,1}* | |w|>= 4 e os 4 primeiros simbolos contem no minimo dois 1's }
+    Utiliza estado de erro
