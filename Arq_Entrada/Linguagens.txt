@@ -10,6 +10,9 @@ Este arquivo descreve a linguagem de cada arquivo de automato:
    {w e {0,1}* | w tem tamanho 3}
    Utiliza estado de erro
 
+-> Entrada4.txt:
+    Reconhece Linguagens AFN com sufixo 01
+
 -> A1.txt:
     {w e {0,1}* | w nao contm as subpalavras 000 e 111}
     Utiliza estado de erro
