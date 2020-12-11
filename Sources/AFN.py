@@ -1,4 +1,4 @@
-class Automato:
+class AutomatoAFN:
     def __init__(self, Q, I,
                  F):  # Construtor inicialmente seta Estados, Iniciais e Finais, alem de remover letras Q,I e F de vetores
         self.Estados = Q.split()
@@ -37,8 +37,10 @@ class Automato:
                 Posicoes.append(j)  # Posicoes onde EstadoAtual possui transicoes
                 # print("Posições do estado: ",self.EstadoAtual," :",Posicoes)
         for k in Posicoes:
-            if i[index] in self.SimbolosEntrada[k]:  # Caso o simbolo esteja nos simbolos aceitos pela transicao, ela é realizada
-                    # print("Simbolo Lido:",i[index], " index: ", index, " tam: ", Tam)
+            print(self.SimbolosEntrada[k])
+            if (i[index] in self.SimbolosEntrada[k]) or self.SimbolosEntrada[k] == '\\':  # Caso o simbolo esteja nos simbolos aceitos pela transicao, ela é realizada
+                    # print("Simbolo Lido:",i[index], " index: ", index, " tam: ", Tam
+                    # )
                     # print("EstadoDestino= ", self.Destino)
                 print(index)
                 print("Simbolo Lido->", i[index])
