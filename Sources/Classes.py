@@ -31,7 +31,8 @@ class Automato:
             print("EstadoAtual= ", self.EstadoAtual)
             Tam=len(i)
             index=0 #index para indexar entrada termo a termo
-            for z in range(len(i)):  #cada iteracao corresponde a uma tentativa de executar um simbolo da entrada
+            for z in range(len(i)-1):  #cada iteracao corresponde a uma tentativa de executar um simbolo da entrada
+                verificador=0  #verificador para transicao que leva para estado de erro
                 Posicoes=[] 
                 for j in range(len(self.Origem)):
                     if(self.Origem[j] == self.EstadoAtual):
@@ -42,12 +43,15 @@ class Automato:
                         # print("Simbolo Lido:",i[index], " index: ", index, " tam: ", Tam)
                         # print("EstadoDestino= ", self.Destino)
                         self.EstadoAtual = self.Destino[k]   #Atualizando estado atual
-                        print("Simbolo Lido->", i[index]) 
-                        print("\nEstadoAtual= ", self.EstadoAtual,"")
+                        print("\nSimbolo Lido->", i[index]) 
+                        print("EstadoAtual= ", self.EstadoAtual)
+                        verificador = 1
                         if(index<Tam-1):
                             index+=1   #Caso transicao aconteca, o index é incrementado
                         break
-                    
+                if(verificador==0):  #Caso nenhuma transicao tenha acontecido, simbolo de entrada levou para o estado de erro
+                    self.EstadoAtual = "Estado_Erro"
+            # print("Estado Atual antes de verificar:",self.EstadoAtual)
             if(self.EstadoAtual in self.EstadosF):  #Caso o estado atual final esteja em um estado final, palavra reconhecida!
                 print("OK")
             else:
