@@ -37,15 +37,18 @@ class AutomatoAFN:
                 Posicoes.append(j)  # Posicoes onde EstadoAtual possui transicoes
                 # print("Posições do estado: ",self.EstadoAtual," :",Posicoes)
         for k in Posicoes:
-            print(self.SimbolosEntrada[k])
-            if (i[index] in self.SimbolosEntrada[k]) or self.SimbolosEntrada[k] == '\\':  # Caso o simbolo esteja nos simbolos aceitos pela transicao, ela é realizada
+            if i[index] in self.SimbolosEntrada[k]:  # Caso o simbolo esteja nos simbolos aceitos pela transicao, ela é realizada
                     # print("Simbolo Lido:",i[index], " index: ", index, " tam: ", Tam
                     # )
                     # print("EstadoDestino= ", self.Destino)
-                print(index)
                 print("Simbolo Lido->", i[index])
                 print("\nEstadoAtual= ", self.Destino[k], "")
                 self.MultiplaComputacao(index+1, Tam, i, self.Destino[k])
+        for y in Posicoes:
+            if '\\' in self.SimbolosEntrada[y]:
+                print("Simbolo Lido->", '\\')
+                print("\nEstadoAtual= ", self.Destino[y], "")
+                self.MultiplaComputacao(index, Tam, i, self.Destino[y])
         if index >= Tam-1:
             if self.EstadoAtual in self.EstadosF:
                 print(self.EstadoAtual)
