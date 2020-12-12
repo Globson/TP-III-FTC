@@ -26,7 +26,6 @@ if __name__ == "__main__":
         Q = Arq.readline()
         I = Arq.readline()
         F = Arq.readline()
-        Automato1 = Automato(Q, I, F)
         if Aux2 == 1:
             Automato1 = Automato(Q, I, F)  # Instanciando objeto com respectivos estados
         elif Aux2 == 2:
@@ -55,9 +54,12 @@ if __name__ == "__main__":
         S = Arq.readline()
         I = Arq.readline()
         F = Arq.readline()
-
-        # Instanciando objeto com respectivos estados
-        Automato1 = Automato(Q, I, F)
+        if Aux2 == 1:
+            # Instanciando objeto com respectivos estados
+            Automato1 = Automato(Q, I, F)
+        elif Aux2 == 2:
+            # Instanciando objeto com respectivos estados
+            Automato1 = AutomatoAFN(Q, I, F)
 
         for linha in Arq:
             if (linha == "---\n"):
