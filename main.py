@@ -1,5 +1,5 @@
 from Sources.AFN import *
-from Sources.Classes import *
+from Sources.AFD import *
 from Sources.AP import *
 from Sources.APN import *
 
@@ -47,14 +47,6 @@ def main():
             for linha in Arq:
                 Automato1.AdicionaEntrada(linha)  # Adicionando Entradas
 
-            print(Automato1.Estados)  # Prints de debug
-            print(Automato1.EstadoI)
-            print(Automato1.EstadosF)
-            print(Automato1.Origem)
-            print(Automato1.Destino)
-            print(Automato1.SimbolosEntrada)
-            print(Automato1.Entradas)
-
             Automato1.RealizaComputacao()
 
         elif (Aux == 2):
@@ -87,13 +79,6 @@ def main():
             for linha in Arq:
                 Automato1.AdicionaEntrada(linha)  # Adicionando Entradas
 
-            print(Automato1.Estados)  # Prints de debug
-            print(Automato1.EstadoI)
-            print(Automato1.EstadosF)
-            print(Automato1.Origem)
-            print(Automato1.Destino)
-            print(Automato1.SimbolosEntrada)
-            print(Automato1.Entradas)
             Automato1.RealizaComputacao()
 
 main()

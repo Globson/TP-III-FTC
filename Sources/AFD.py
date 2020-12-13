@@ -25,10 +25,11 @@ class Automato:
         self.Entradas.append(Entrada)
     
     def RealizaComputacao(self): 
+        print(" ") #quebra de linha
         for i in self.Entradas: #Cada entrada é iterada 
-            print("\t->Entrada:",i)
+            # print("\n\t->Entrada:",i)
             self.EstadoAtual = self.EstadoI[0]  #Estado inicial setado como atual
-            print("EstadoAtual= ", self.EstadoAtual)
+            #print("EstadoAtual= ", self.EstadoAtual)
             Tam=len(i)
             index=0 #index para indexar entrada termo a termo
             for z in range(len(i)-1):  #cada iteracao corresponde a uma tentativa de executar um simbolo da entrada
@@ -43,8 +44,8 @@ class Automato:
                         # print("Simbolo Lido:",i[index], " index: ", index, " tam: ", Tam)
                         # print("EstadoDestino= ", self.Destino)
                         self.EstadoAtual = self.Destino[k]   #Atualizando estado atual
-                        print("\nSimbolo Lido->", i[index]) 
-                        print("EstadoAtual= ", self.EstadoAtual)
+                        #print("\nSimbolo Lido->", i[index]) 
+                        #print("EstadoAtual= ", self.EstadoAtual)
                         verificador = 1
                         if(index<Tam-1):
                             index+=1   #Caso transicao aconteca, o index é incrementado
@@ -53,7 +54,7 @@ class Automato:
                     self.EstadoAtual = "Estado_Erro"
             # print("Estado Atual antes de verificar:",self.EstadoAtual)
             if(self.EstadoAtual in self.EstadosF):  #Caso o estado atual final esteja em um estado final, palavra reconhecida!
-                print("OK")
+                print("OK -> Entrada: ",i)
             else:
-                print("X")
+                print("X -> Entrada: ",i)
 
