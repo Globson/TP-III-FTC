@@ -71,11 +71,13 @@ def main():
                 main()
                 return
             if Aux2 == 1:
-                # Instanciando objeto com respectivos estados
-                Automato1 = Automato(Q, I, F)
+                Automato1 = Automato(Q, I, F)  # Instanciando objeto com respectivos estados
             elif Aux2 == 2:
-                # Instanciando objeto com respectivos estados
-                Automato1 = AutomatoAFN(Q, I, F)
+                Automato1 = AutomatoAFN(Q, I, F)  # Instanciando objeto com respectivos estados
+            elif Aux2 == 3:
+                Automato1 = AutomatoAPD(Q, I, F)
+            elif Aux2 == 4:
+                Automato1 = AutomatoAPN(Q, I, F)
 
             for linha in Arq:
                 if (linha == "---\n"):
