@@ -13,6 +13,9 @@ Este arquivo descreve a linguagem de cada arquivo de automato:
 -> Entrada4.txt:
     Reconhece Linguagens AFN com sufixo 01
 
+->Entrada5.txt:
+    APD que reconhece linguagens com prefixo 1
+
 -> A1.txt:
     {w e {0,1}* | w nao contm as subpalavras 000 e 111}
     Utiliza estado de erro
