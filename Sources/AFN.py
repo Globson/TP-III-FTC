@@ -30,7 +30,6 @@ class AutomatoAFN:
 
     def MultiplaComputacao(self,index,Tam,i,estado):
         self.EstadoAtual = estado
-        print("Computação ",self.computacao)
         Posicoes = []
         for j in range(len(self.Origem)):
              if (self.Origem[j] == self.EstadoAtual):
@@ -41,32 +40,26 @@ class AutomatoAFN:
                     # print("Simbolo Lido:",i[index], " index: ", index, " tam: ", Tam
                     # )
                     # print("EstadoDestino= ", self.Destino)
-                print("Simbolo Lido->", i[index])
-                print("\nEstadoAtual= ", self.Destino[k], "")
                 self.MultiplaComputacao(index+1, Tam, i, self.Destino[k])
         for y in Posicoes:
             if '\\' in self.SimbolosEntrada[y]:
-                print("Simbolo Lido->", '\\')
-                print("\nEstadoAtual= ", self.Destino[y], "")
                 self.MultiplaComputacao(index, Tam, i, self.Destino[y])
         if index >= Tam-1:
             if self.EstadoAtual in self.EstadosF:
-                print(self.EstadoAtual)
                 self.reconhecido = 1
             self.computacao += 1
             return
 
     def RealizaComputacao(self):
+        print(" ")  # quebra de linha
         for i in self.Entradas:  # Cada entrada é iterada
-            print("\t->Entrada:", i)
             self.computacao = 1
             self.reconhecido = 0
             self.EstadoAtual = self.EstadoI[0]  # Estado inicial setado como atual
-            print("EstadoAtual= ", self.EstadoAtual)
             Tam = len(i)
             index = 0  # index para indexar entrada termo a termo
             self.MultiplaComputacao(index, Tam, i, self.EstadoAtual)
             if self.reconhecido == 1:
-                print("OK")
+                print("OK -> Entrada: ",i)
             else:
-                print("X")
+                print("X -> Entrada: ",i)

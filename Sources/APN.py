@@ -121,8 +121,8 @@ class AutomatoAPN:
 
 
     def RealizaComputacao(self):
+        print(" ")
         for i in self.Entradas:  # Cada entrada é iterada
-            print("\t->Entrada:", i)
             self.computacao = 1
             self.reconhecido = 0
             self.pilha = []
@@ -131,6 +131,6 @@ class AutomatoAPN:
             index = 0  # index para indexar entrada termo a termo
             self.MultiplaComputacao(index, Tam, i, self.EstadoAtual)
             if self.reconhecido == 1:
-                print("OK")
+                print("OK -> Entrada: ",i)
             else:
-                print("X")
+                print("X -> Entrada: ",i)

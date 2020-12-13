@@ -47,8 +47,8 @@ class AutomatoAPD:
         self.Entradas.append(Entrada)
 
     def RealizaComputacao(self):
+        print(" ")
         for i in self.Entradas:  # Cada entrada é iterada
-            print("\t->Entrada:", i)
             self.pilha = []
             self.EstadoAtual = self.EstadoI[0]  # Estado inicial setado como atual
             Tam = len(i)
@@ -100,6 +100,6 @@ class AutomatoAPD:
                     self.EstadoAtual = "Estado_Erro"
             if (
                     self.EstadoAtual in self.EstadosF and len(self.pilha) == 0):  # Caso o estado atual final esteja em um estado final, palavra reconhecida!
-                print("OK")
+                print("OK -> Entrada: ",i)
             else:
-                print("X")
+                print("X -> Entrada: ",i)
